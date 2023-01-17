@@ -1,0 +1,100 @@
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.prokrutka {
+width:1000px;
+height:300px;
+border: 1px solid #C1C1C1;
+overflow: auto;}
+
+.container > * {
+  color: #353535;
+  font-size: 1.2em;
+  line-height: 1,5;
+  padding: 10px;
+  background: #d0cfc5;
+  width:1343px;
+}
+
+
+.container nav {
+  background: #136fd2;
+  width:1343px;
+height:30px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #d0cfc5
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+
+@media only screen and (min-width: 400px) {
+    
+
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+
+  .container header,
+  .container nav,
+  .container footer {
+    grid-column: span 4;
+  }
+  .container section {
+    grid-column: span 3;
+  }
+  
+
+  nav ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+  }
+  
+
+  .toggle {
+    display: none;
+  }
+  
+}
+
+
+@media only screen and (max-width: 800px) {
+  
+    #nav {
+      transition: transform .3s ease-in-out;
+      top: 0;
+      bottom: 0;   
+      min-height: 100vh; 
+      position: fixed; 
+      width: 300px;
+      left: -340px;
+    }
+  
+    #nav:target {     
+      transform: translateX(340px);
+    }
+  
+    .close {
+      text-align: right;
+      display: block;
+      text-decoration: none;
+      font-size: 3em;
+      position: relative;
+      top: -30px;
+    }
+  
+}
